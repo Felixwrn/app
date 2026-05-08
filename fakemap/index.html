@@ -221,6 +221,31 @@ body{
     <p>Obstacle Detection: STANDBY</p>
     <p>Battery: 84%</p>
 </div>
+<script>
 
+let timeout;
+
+function resetTimer(){
+
+    clearTimeout(timeout);
+
+    timeout = setTimeout(() => {
+
+        window.location.href = "index.html";
+
+    }, 60000); // 60 Sekunden
+
+}
+
+// Benutzeraktivität erkennen
+document.addEventListener("mousemove", resetTimer);
+document.addEventListener("click", resetTimer);
+document.addEventListener("touchstart", resetTimer);
+document.addEventListener("keydown", resetTimer);
+
+// Start Timer
+resetTimer();
+
+</script>
 </body>
 </html>
